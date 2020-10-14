@@ -1,0 +1,6 @@
+random_state : 42 # Because Douglas Adams <3
+test_size : 0.33 # Because why not
+stratify: True
+
+test_size_array : [0.15, 0.20, 0.25, 0.30, 0.33, 0.35]
+stratify_array : [True, False]

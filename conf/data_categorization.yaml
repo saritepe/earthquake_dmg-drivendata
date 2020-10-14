@@ -1,0 +1,8 @@
+#data categories for encoding
+cat_cols : ["geo_level_1_id", "geo_level_2_id", "geo_level_3_id", "land_surface_condition",
+  "foundation_type", "roof_type", "ground_floor_type", "other_floor_type", "position", "plan_configuration",
+  "legal_ownership_status"]
+
+drop_cols : ["building_id"]
+
+label_cols : ["damage_grade"]
