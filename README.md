@@ -1,4 +1,4 @@
-earhquake_dmg
+earthquake_dmg
 ==============================
 
 predicting damage of earthquake
