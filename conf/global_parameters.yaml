@@ -10,3 +10,4 @@ encoder_array : [ "BackwardDifferenceEncoder", "BaseNEncoder", "BinaryEncoder", 
                   "HashingEncoder", "HelmertEncoder", "JamesSteinEncoder", "LeaveOneOutEncoder", "MEstimateEncoder",
                   "OneHotEncoder", "OrdinalEncoder", "SumEncoder", "PolynomialEncoder", "TargetEncoder", "WOEEncoder"]
 scaler_array : ["StandardScaler", "MaxAbsScaler", "MinMaxScaler", "Normalizer", "Binarizer"]
+cv_array : ["RepeatedKFold", "RepeatedStratifiedKFold"]
