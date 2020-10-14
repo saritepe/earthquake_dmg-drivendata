@@ -1,9 +1,12 @@
 random_state : 42 # Because Douglas Adams <3
 test_size : 0.33 # Because why not
 stratify: True
+encoder : BinaryEncoder
+scaler : StandardScaler
 
 test_size_array : [0.15, 0.20, 0.25, 0.30, 0.33, 0.35]
 stratify_array : [True, False]
 encoder_array : [ "BackwardDifferenceEncoder", "BaseNEncoder", "BinaryEncoder", "CatBoostEncoder", "CountEncoder", "GLMMEncoder",
                   "HashingEncoder", "HelmertEncoder", "JamesSteinEncoder", "LeaveOneOutEncoder", "MEstimateEncoder",
                   "OneHotEncoder", "OrdinalEncoder", "SumEncoder", "PolynomialEncoder", "TargetEncoder", "WOEEncoder"]
+scaler_array : ["StandardScaler", "MaxAbsScaler", "MinMaxScaler", "Normalizer", "Binarizer"]
