@@ -1,7 +1,7 @@
 earhquake_dmg
 ==============================
 
-predicting damage of earchquake
+predicting damage of earthquake
 
 Project Organization
 ------------
