@@ -1,2 +1,2 @@
-def fitting(process, data):
-    return process.fit(data)
+def fitting(process, data, y=None):
+    return process.fit(data, y)

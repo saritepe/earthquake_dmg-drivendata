@@ -1,0 +1,16 @@
+dtc_param_grid['criterion'] = param_criterion
+dtc_param_grid['splitter'] = param_splitter
+dtc_param_grid['max_depth'] = param_max_depth
+dtc_param_grid['min_samples_leaf'] = param_min_samples_leaf
+dtc_param_grid['min_samples_split'] = param_min_samples_split
+dtc_param_grid['max_features'] = param_max_features
+
+param_n_estimators = [int(x) for x in np.linspace(start = 200, stop = 2000, num = 10)]
+param_max_features = ['auto', 'sqrt', 'log2']
+param_max_depth = [int(x) for x in np.linspace(10, 200, num = 40)]
+param_max_depth.append(None)
+param_min_samples_split = [int(x) for x in np.linspace(2, 30, num = 10)]
+param_min_samples_leaf = [int(x) for x in np.linspace(1, 30, num = 10)]
+param_bootstrap = [True, False]
+param_criterion = ['gini', 'entropy']
+param_splitter = ['best', 'random']
