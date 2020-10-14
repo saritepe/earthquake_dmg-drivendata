@@ -1,5 +1,5 @@
 #file paths
-train_values: ../data/raw/train_values.csv
-train_labels: ../data/raw/train_labels.csv
-test_values: ../data/raw/test_values.csv
-submission_format: ../data/raw/submission_format.csv
+train_values: data/raw/train_values.csv
+train_labels: data/raw/train_labels.csv
+test_values: data/raw/test_values.csv
+submission_format: data/raw/submission_format.csv
