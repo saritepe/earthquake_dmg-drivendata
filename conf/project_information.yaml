@@ -1,0 +1,3 @@
+project_name : earthquake_dmg
+project_type : multi_label_classification
+col_name : score
