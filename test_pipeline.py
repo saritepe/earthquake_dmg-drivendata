@@ -1,3 +1,4 @@
+from sklearn.pipeline import Pipeline
 import datetime
 
 from src.utils.get_config import get_config
@@ -14,6 +15,7 @@ from src.features.scaling import select_scaler
 from src.features.feature_selector import feature_selector
 from src.features.fitting import fitting
 from src.features.transforming import transforming
+from src.features.decompositioning import decompositioning
 from src.models.train_model import model_param_search
 
 
@@ -34,28 +36,28 @@ sample_data = sampling(df_dropped)
 
 X_train, X_test, y_train, y_test = split_data(sample_data)
 encoder = select_encoder(cat_cols, encoder_name)
-encoder = fitting(encoder, X_train, y_train)
-X_train_enc = transforming(encoder, X_train)
-X_test_enc = transforming(encoder, X_test)
+
+
 scaler = select_scaler(scaler_name)
-scaler = fitting(scaler, X_train_enc, y_train)
-X_train_sca = transforming(scaler, X_train_enc)
-X_test_sca = transforming(scaler, X_test_enc)
+pca = decompositioning(2, 'PCA')
 model = get_model(model_name)
 feature_selector = feature_selector(feature_selector_name, model)
-feature_selector = fitting(feature_selector, X_train_sca, y_train)
-X_train_fs = transforming(feature_selector, X_train_sca)
-X_test_fs = transforming(feature_selector, X_test_sca)
-
 
 # train
 clf = model_param_search(search_type, model_name)
-clf = fitting(clf, X_train_fs, y_train)
 
-estimator = str(clf.best_estimator_)
+steps = [('encoder', encoder), ('scaler', scaler), ('pca', pca), ('feature_selector_name', feature_selector),
+         (model_name, clf)]
+
+pipe = Pipeline(steps)
+
+pipe.fit(X_train, y_train)
+
+estimator = 'deneme'
+# str(clf.best_estimator_)
 score_func = scoring_name
-score = clf.best_score_
-y_pred = clf.predict(X_test_fs)
+score = pipe.score(X_train, y_train)
+y_pred = pipe.predict(X_test)
 test_score = calc_score(y_test, y_pred, scoring_name)
 current_time = datetime.datetime.now()
 
